@@ -1,0 +1,12 @@
+node_modules
+dist
+.DS_Store
+server/public
+vite.config.ts.*
+*.tar.gz
+# Portfolio images and PDF
+# Other large or temporary files
+attached_assets/*.txt
+*.log
+.cache
+.vercel
