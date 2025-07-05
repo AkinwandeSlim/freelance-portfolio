@@ -1,7 +1,7 @@
 node_modules
 dist
 .DS_Store
-server/public
+server/
 *.tar.gz
 # Portfolio images and PDF
 # Other large or temporary files
