@@ -148,7 +148,7 @@ export default function Home() {
             <div className="mb-8">
               <div className="relative inline-block">
                 <img 
-                  src="assets\images\alexsss.jpg" 
+                  src="\images\alexsss.jpg" 
                   alt="Fakorede Akinwande Alexander - Data Science & Fullstack Developer" 
                   className="w-48 h-48 lg:w-64 lg:h-64 rounded-full mx-auto shadow-2xl object-cover border-8 border-white"
                 />
@@ -638,7 +638,7 @@ export default function Home() {
               period: "Academic System",
               metric: "University Collaboration",
               icon: Users,
-              image: "assets/images/projects/TPMA.jpg",
+              image: "/images/projects/TPMA.jpg",
               demoUrl: "https://tpma-frontend.vercel.app/",
               githubUrl: "https://github.com/AkinwandeSlim/SLUK-TPMA"
             },
@@ -649,7 +649,7 @@ export default function Home() {
               period: "Full-Stack Project",
               metric: "Complete Banking Solution",
               icon: Globe,
-              image: "assets/images/projects/bankweb.jpg",
+              image: "/images/projects/bankweb.jpg",
               demoUrl: null,
               githubUrl: "https://github.com/AkinwandeSlim/Django-bankwebsite"
             }
@@ -743,7 +743,7 @@ export default function Home() {
       period: "Environmental ML",
       metric: "PM2.5 Prediction",
       icon: ChartLine,
-      image: "assets/images/projects/dpcs.jpg",
+      image: "/images/projects/dpcs.jpg",
       demoUrl: null,
       githubUrl: "https://github.com/AkinwandeSlim/Dust-Particle-Control-System"
     },
@@ -754,7 +754,7 @@ export default function Home() {
       period: "Healthcare AI",
       metric: "Deep Learning Detection",
       icon: Brain,
-      image: "assets/images/projects/BreastCancer.jpg",
+      image: "/images/projects/BreastCancer.jpg",
       demoUrl: "https://www.youtube.com/watch?v=pXYgyJ3ne7A",
       githubUrl: "https://github.com/AkinwandeSlim/breast-cancer-detection"
     },
@@ -765,7 +765,7 @@ export default function Home() {
       period: "Security Analytics",
       metric: "Crime Prediction",
       icon: Shield,
-      image: "assets/images/projects/NGBA.jpg",
+      image: "/images/projects/NGBA.jpg",
       demoUrl: null,
       githubUrl: "https://github.com/AkinwandeSlim/NG-Banditry-Analysis"
     },
@@ -776,7 +776,7 @@ export default function Home() {
       period: "Network Security",
       metric: "Real-time Monitoring",
       icon: Shield,
-      image: "assets/images/projects/MANET.jpg",
+      image: "/images/projects/MANET.jpg",
       demoUrl: "https://www.youtube.com/watch?v=ZFatL-b8YzI",
       githubUrl: "https://github.com/AkinwandeSlim/MANET-NIDS"
     },
@@ -787,7 +787,7 @@ export default function Home() {
       period: "Real-time Analytics",
       metric: "Concept Drift Detection",
       icon: Brain,
-      image: "assets/images/projects/output.png",
+      image: "/images/projects/output.png",
       demoUrl: null,
       githubUrl: "https://github.com/AkinwandeSlim/FlinkApp"
     }
