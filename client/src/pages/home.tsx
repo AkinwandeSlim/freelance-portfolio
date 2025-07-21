@@ -620,6 +620,159 @@ export default function Home() {
           </p>
         </div>
 
+
+        {/* Data Science / AI / ML Projects */}
+        <div className="mb-16">
+          <div className="flex items-center justify-center mb-8">
+            <div className="flex items-center bg-success/10 rounded-full px-6 py-3">
+              <Brain className="w-6 h-6 text-success mr-3" />
+              <h3 className="text-2xl font-bold text-success">Data Science & AI/ML</h3>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+          {
+            title: "Telco Churn Prediction System",
+            description: "An end-to-end machine learning project built to detect and prevent customer churn in the telecom industry. This solution integrates data preprocessing, modeling with Orange ML, and a fully interactive Streamlit dashboard. Designed for business impact, it identifies high-risk customers, enables data-driven decisions, and supports churn mitigation strategies.",
+            technologies: ["Python","Orange ML", "Streamlit", "Pandas", "NumPy", "Plotly","Matplotlib", "Seaborn"],
+            period: "Telecommunication AI",
+            metric: "96% Accuracy | 0.990 AUC Score",
+            icon: ChartLine,
+            image: "/images/projects/telco-churn.jpg",
+            demoUrl: "https://telco-churn-analysis-2.onrender.com/",
+            githubUrl: "https://github.com/AkinwandeSlim/telco-churn-analysis"
+          }
+        ,
+            {
+              title: "Dust Particle Control System",
+              description: "Advanced Streamlit-based web application for monitoring and predicting dust particle concentrations (PM2.5 and PM10) using machine learning. Enables environmental agencies and researchers to analyze air quality data and forecast PM2.5 levels.",
+              technologies: ["Python", "Streamlit", "Pandas", "NumPy", "Scikit-learn", "XGBoost", "Matplotlib", "Seaborn", "SQLite"],
+              period: "Environmental ML",
+              metric: "PM2.5 Prediction",
+              icon: ChartLine,
+              image: "/images/projects/dpcs.jpg",
+              demoUrl: "https://dust-particle-control.streamlit.app/",
+              githubUrl: "https://github.com/AkinwandeSlim/Dust-Particle-Control-System"
+            },
+            {
+              title: "Breast Cancer Detection System",
+              description: "Advanced deep learning application for early breast cancer detection using histopathological image patches. Features custom ResNet18 model, tissue visualization with cancer overlays, heatmaps, and intuitive Streamlit interface for healthcare practitioners.",
+              technologies: ["Python", "PyTorch", "Streamlit", "NumPy", "Pandas", "Matplotlib", "Torchvision", "Scikit-learn", "TensorFlow"],
+              period: "Healthcare AI",
+              metric: "Deep Learning Detection",
+              icon: Brain,
+              image: "/images/projects/BreastCancer.jpg",
+              demoUrl: "https://www.youtube.com/watch?v=pXYgyJ3ne7A",
+              githubUrl: "https://github.com/AkinwandeSlim/breast-cancer-detection"
+            },
+            {
+              title: "Nigeria Banditry Attack Analysis",
+              description: "Data mining and predictive modeling system analyzing banditry incidents across Nigeria using ACLED crime data. Identifies high-risk LGAs, key crime drivers, and provides actionable insights for national security strategy using XGBoost and SHAP.",
+              technologies: ["Python", "Jupyter", "pandas", "scikit-learn", "XGBoost", "SHAP", "GeoPandas"],
+              period: "Security Analytics",
+              metric: "Crime Prediction",
+              icon: Shield,
+              image: "/images/projects/NGBA.jpg",
+              demoUrl: null,
+              githubUrl: "https://github.com/AkinwandeSlim/NG-Banditry-Analysis"
+            },
+            {
+              title: "MANET Network Intrusion Detection",
+              description: "Network Intrusion Detection System for Mobile Ad-Hoc Networks simulating real-time file event monitoring across multiple nodes. Features encrypted alert routing to admin nodes, tailored for military operations, disaster zones, and IoT systems.",
+              technologies: ["Python", "watchdog", "Colorama", "Pycryptodome", "Socket", "RSA", "3DES"],
+              period: "Network Security",
+              metric: "Real-time Monitoring",
+              icon: Shield,
+              image: "/images/projects/MANET.jpg",
+              demoUrl: "https://www.youtube.com/watch?v=ZFatL-b8YzI",
+              githubUrl: "https://github.com/AkinwandeSlim/MANET-NIDS"
+            },
+            {
+              title: "SABDDeM Flink Drift Detection",
+              description: "Real-time streaming pipeline using Apache Flink for concept drift detection with a custom Sliding Window Adaptive Beta Distribution Drift Detection Model (SABDDeM). Integrates Kafka, LightGBM, Elasticsearch, Kibana, Redis, and a Flask API with River ML for monitoring and predictions.",
+              technologies: ["Python", "PyFlink", "Kafka", "LightGBM", "Elasticsearch", "Kibana", "Redis", "Flask", "River ML", "Docker"],
+              period: "Real-time Analytics",
+              metric: "Concept Drift Detection",
+              icon: Brain,
+              image: "/images/projects/output.png",
+              demoUrl: null,
+              githubUrl: "https://github.com/AkinwandeSlim/FlinkApp"
+            }
+          ].map((project, index) => (
+            <Card key={index} className="overflow-hidden group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" 
+              />
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-foreground mb-3">{project.title}</h3>
+                <p className="text-muted-foreground mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.slice(0, 4).map((tech, techIndex) => (
+                    <Badge key={techIndex} variant="default" className="bg-primary text-primary-foreground">
+                      {tech}
+                    </Badge>
+                  ))}
+                  {project.technologies.length > 4 && (
+                    <Badge variant="outline" className="text-xs">
+                      +{project.technologies.length - 4} more
+                    </Badge>
+                  )}
+                </div>
+                <p className="text-sm text-muted-foreground mb-4">{project.period}</p>
+                <div className="flex items-center text-success mb-4">
+                  <project.icon className="w-4 h-4 mr-2" />
+                  <span className="text-sm font-medium">{project.metric}</span>
+                </div>
+                
+                {/* Project Links */}
+                <div className="flex gap-3">
+                  {project.demoUrl ? (
+                    <Button 
+                      asChild 
+                      size="sm" 
+                      className="bg-primary hover:bg-primary/90 text-white flex-1"
+                    >
+                      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        {project.demoUrl.includes('youtube') ? 'Demo Video' : 'Live Demo'}
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button 
+                      asChild 
+                      size="sm" 
+                      className="bg-primary hover:bg-primary/90 text-white flex-1"
+                    >
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                        <Github className="w-4 h-4 mr-2" />
+                        View Code
+                      </a>
+                    </Button>
+                  )}
+                  {project.demoUrl && (
+                    <Button 
+                      asChild 
+                      size="sm" 
+                      variant="outline" 
+                      className="border-gray-300 hover:bg-gray-50 flex-1"
+                    >
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                        <Github className="w-4 h-4 mr-2" />
+                        Code
+                      </a>
+                    </Button>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+          </div>
+        </div>
+
+
         {/* Fullstack Development Projects */}
         <div className="mb-16">
           <div className="flex items-center justify-center mb-8">
@@ -722,168 +875,8 @@ export default function Home() {
         </div>
 
 
-
-
-
-{/* Data Science / AI / ML Projects */}
-<div className="mb-16">
-  <div className="flex items-center justify-center mb-8">
-    <div className="flex items-center bg-success/10 rounded-full px-6 py-3">
-      <Brain className="w-6 h-6 text-success mr-3" />
-      <h3 className="text-2xl font-bold text-success">Data Science & AI/ML</h3>
-    </div>
-  </div>
-  
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-  {[
-  {
-    title: "Telco Churn Prediction System",
-    description: "An end-to-end machine learning project built to detect and prevent customer churn in the telecom industry. This solution integrates data preprocessing, modeling with Orange ML, and a fully interactive Streamlit dashboard. Designed for business impact, it identifies high-risk customers, enables data-driven decisions, and supports churn mitigation strategies.",
-    technologies: ["Python","Orange ML", "Streamlit", "Pandas", "NumPy", "Plotly","Matplotlib", "Seaborn"],
-    period: "Telecommunication AI",
-    metric: "96% Accuracy | 0.990 AUC Score",
-    icon: ChartLine,
-    image: "/images/projects/telco-churn.jpg",
-    demoUrl: "https://telco-churn-analysis-2.onrender.com/",
-    githubUrl: "https://github.com/AkinwandeSlim/telco-churn-analysis"
-  }
-,
-    {
-      title: "Dust Particle Control System",
-      description: "Advanced Streamlit-based web application for monitoring and predicting dust particle concentrations (PM2.5 and PM10) using machine learning. Enables environmental agencies and researchers to analyze air quality data and forecast PM2.5 levels.",
-      technologies: ["Python", "Streamlit", "Pandas", "NumPy", "Scikit-learn", "XGBoost", "Matplotlib", "Seaborn", "SQLite"],
-      period: "Environmental ML",
-      metric: "PM2.5 Prediction",
-      icon: ChartLine,
-      image: "/images/projects/dpcs.jpg",
-      demoUrl: "https://dust-particle-control.streamlit.app/",
-      githubUrl: "https://github.com/AkinwandeSlim/Dust-Particle-Control-System"
-    },
-    {
-      title: "Breast Cancer Detection System",
-      description: "Advanced deep learning application for early breast cancer detection using histopathological image patches. Features custom ResNet18 model, tissue visualization with cancer overlays, heatmaps, and intuitive Streamlit interface for healthcare practitioners.",
-      technologies: ["Python", "PyTorch", "Streamlit", "NumPy", "Pandas", "Matplotlib", "Torchvision", "Scikit-learn", "TensorFlow"],
-      period: "Healthcare AI",
-      metric: "Deep Learning Detection",
-      icon: Brain,
-      image: "/images/projects/BreastCancer.jpg",
-      demoUrl: "https://www.youtube.com/watch?v=pXYgyJ3ne7A",
-      githubUrl: "https://github.com/AkinwandeSlim/breast-cancer-detection"
-    },
-    {
-      title: "Nigeria Banditry Attack Analysis",
-      description: "Data mining and predictive modeling system analyzing banditry incidents across Nigeria using ACLED crime data. Identifies high-risk LGAs, key crime drivers, and provides actionable insights for national security strategy using XGBoost and SHAP.",
-      technologies: ["Python", "Jupyter", "pandas", "scikit-learn", "XGBoost", "SHAP", "GeoPandas"],
-      period: "Security Analytics",
-      metric: "Crime Prediction",
-      icon: Shield,
-      image: "/images/projects/NGBA.jpg",
-      demoUrl: null,
-      githubUrl: "https://github.com/AkinwandeSlim/NG-Banditry-Analysis"
-    },
-    {
-      title: "MANET Network Intrusion Detection",
-      description: "Network Intrusion Detection System for Mobile Ad-Hoc Networks simulating real-time file event monitoring across multiple nodes. Features encrypted alert routing to admin nodes, tailored for military operations, disaster zones, and IoT systems.",
-      technologies: ["Python", "watchdog", "Colorama", "Pycryptodome", "Socket", "RSA", "3DES"],
-      period: "Network Security",
-      metric: "Real-time Monitoring",
-      icon: Shield,
-      image: "/images/projects/MANET.jpg",
-      demoUrl: "https://www.youtube.com/watch?v=ZFatL-b8YzI",
-      githubUrl: "https://github.com/AkinwandeSlim/MANET-NIDS"
-    },
-    {
-      title: "SABDDeM Flink Drift Detection",
-      description: "Real-time streaming pipeline using Apache Flink for concept drift detection with a custom Sliding Window Adaptive Beta Distribution Drift Detection Model (SABDDeM). Integrates Kafka, LightGBM, Elasticsearch, Kibana, Redis, and a Flask API with River ML for monitoring and predictions.",
-      technologies: ["Python", "PyFlink", "Kafka", "LightGBM", "Elasticsearch", "Kibana", "Redis", "Flask", "River ML", "Docker"],
-      period: "Real-time Analytics",
-      metric: "Concept Drift Detection",
-      icon: Brain,
-      image: "/images/projects/output.png",
-      demoUrl: null,
-      githubUrl: "https://github.com/AkinwandeSlim/FlinkApp"
-    }
-  ].map((project, index) => (
-    <Card key={index} className="overflow-hidden group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-      <img 
-        src={project.image} 
-        alt={project.title} 
-        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" 
-      />
-      <CardContent className="p-6">
-        <h3 className="text-xl font-semibold text-foreground mb-3">{project.title}</h3>
-        <p className="text-muted-foreground mb-4">{project.description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.technologies.slice(0, 4).map((tech, techIndex) => (
-            <Badge key={techIndex} variant="default" className="bg-primary text-primary-foreground">
-              {tech}
-            </Badge>
-          ))}
-          {project.technologies.length > 4 && (
-            <Badge variant="outline" className="text-xs">
-              +{project.technologies.length - 4} more
-            </Badge>
-          )}
-        </div>
-        <p className="text-sm text-muted-foreground mb-4">{project.period}</p>
-        <div className="flex items-center text-success mb-4">
-          <project.icon className="w-4 h-4 mr-2" />
-          <span className="text-sm font-medium">{project.metric}</span>
-        </div>
-        
-        {/* Project Links */}
-        <div className="flex gap-3">
-          {project.demoUrl ? (
-            <Button 
-              asChild 
-              size="sm" 
-              className="bg-primary hover:bg-primary/90 text-white flex-1"
-            >
-              <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                {project.demoUrl.includes('youtube') ? 'Demo Video' : 'Live Demo'}
-              </a>
-            </Button>
-          ) : (
-            <Button 
-              asChild 
-              size="sm" 
-              className="bg-primary hover:bg-primary/90 text-white flex-1"
-            >
-              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <Github className="w-4 h-4 mr-2" />
-                View Code
-              </a>
-            </Button>
-          )}
-          {project.demoUrl && (
-            <Button 
-              asChild 
-              size="sm" 
-              variant="outline" 
-              className="border-gray-300 hover:bg-gray-50 flex-1"
-            >
-              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <Github className="w-4 h-4 mr-2" />
-                Code
-              </a>
-            </Button>
-          )}
-        </div>
-      </CardContent>
-    </Card>
-  ))}
-  </div>
-</div>
-
-
-
-
-
-
       </div>
     </section>
-
       {/* Achievements & Certifications */}
       <section className="py-16 bg-muted" data-animate>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
