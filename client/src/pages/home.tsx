@@ -736,6 +736,18 @@ export default function Home() {
   
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
   {[
+  {
+    title: "Telco Churn Prediction System",
+    description: "An end-to-end machine learning project built to detect and prevent customer churn in the telecom industry. This solution integrates data preprocessing, modeling with Orange ML, and a fully interactive Streamlit dashboard. Designed for business impact, it identifies high-risk customers, enables data-driven decisions, and supports churn mitigation strategies.",
+    technologies: ["Python", "Streamlit", "Pandas", "NumPy", "Plotly", "Orange ML", "Matplotlib", "Seaborn"],
+    period: "Telecommunication AI",
+    metric: "96% Accuracy | 0.990 AUC Score",
+    icon: ChartLine,
+    image: "/images/projects/telco-churn.jpg",
+    demoUrl: "https://telco-churn-analysis-2.onrender.com/",
+    githubUrl: "https://github.com/AkinwandeSlim/telco-churn-analysis"
+  }
+,
     {
       title: "Dust Particle Control System",
       description: "Advanced Streamlit-based web application for monitoring and predicting dust particle concentrations (PM2.5 and PM10) using machine learning. Enables environmental agencies and researchers to analyze air quality data and forecast PM2.5 levels.",
